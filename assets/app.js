@@ -73,6 +73,11 @@ document.addEventListener("DOMContentLoaded", function () {
       validarUfBadge.textContent = DEFAULT_UF;
       validarUfBadge.classList.add("filled");
     }
+
+    // Aplica destaque visual no botão Validar para guiar o usuário
+    if (btnValidarAction) {
+      btnValidarAction.classList.add("ready-to-validate");
+    }
   }
 
   // Clicar em "Escolher Arquivo" abre a seleção do Windows
@@ -164,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
     btnValidateToken.innerHTML = '<span class="spinner"></span> Validando token...';
 
     setTimeout(function () {
-      if (digitado === VALID_TOKEN) {
+      if (digitado.toLowerCase() === VALID_TOKEN.toLowerCase()) {
         if (alertError) alertError.classList.remove("show");
         if (alertSuccess) {
           alertSuccess.innerHTML = `
@@ -208,5 +213,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const patientDocFilename = document.getElementById("patient-doc-filename");
   if (patientDocFilename) {
     patientDocFilename.textContent = nomeSalvo;
+  }
+
+  const valTimestamp = document.getElementById("val-timestamp");
+  if (valTimestamp) {
+    const agora = new Date();
+    const dia = String(agora.getDate()).padStart(2, "0");
+    const mes = String(agora.getMonth() + 1).padStart(2, "0");
+    const ano = agora.getFullYear();
+    const hora = String(agora.getHours()).padStart(2, "0");
+    const min = String(agora.getMinutes()).padStart(2, "0");
+    const seg = String(agora.getSeconds()).padStart(2, "0");
+    valTimestamp.textContent = `${dia}/${mes}/${ano} às ${hora}:${min}:${seg} (GMT-3)`;
   }
 });

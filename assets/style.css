@@ -223,6 +223,26 @@ body {
   background-color: var(--accent-blue-hover);
 }
 
+.btn-solid-pill.ready-to-validate {
+  animation: pulse-action 1.8s infinite;
+  background-color: #1d4ed8;
+}
+
+@keyframes pulse-action {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(37, 99, 235, 0);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    transform: scale(1);
+  }
+}
+
 /* Terms Checkbox */
 .terms-wrapper {
   display: flex;

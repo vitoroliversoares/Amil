@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resultado da Validação - Validador de Assinatura</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="assets/style.css" />
   <style>
     @media print {
@@ -92,6 +93,20 @@
           </div>
 
           <div class="patient-row">
+            <span class="patient-label">Realização do Exame / Atendimento</span>
+            <span class="patient-value" style="font-size: 15px; color: #1e293b;">
+              09/09/2026 às 19:15:22 (GMT-3)
+            </span>
+          </div>
+
+          <div class="patient-row">
+            <span class="patient-label">Data e Hora da Validação</span>
+            <span class="patient-value" id="val-timestamp" style="font-size: 14.5px; color: #475569;">
+              12/09/2026 às 00:10 (GMT-3)
+            </span>
+          </div>
+
+          <div class="patient-row">
             <span class="patient-label">Documento Autenticado</span>
             <span class="patient-value" id="patient-doc-filename" style="font-size: 15px;">Atestado Médico.pdf</span>
           </div>
@@ -102,8 +117,15 @@
           </div>
 
           <div class="patient-row">
+            <span class="patient-label">Protocolo de Verificação</span>
+            <span class="patient-value" style="font-family: monospace; font-size: 14px; color: #475569;">
+              MED-20260909-849204
+            </span>
+          </div>
+
+          <div class="patient-row">
             <span class="patient-label">Token de Validação</span>
-            <span class="patient-value" style="font-family: monospace; font-size: 15px; color: #475569;">
+            <span class="patient-value" style="font-family: monospace; font-size: 15px; color: #047857; font-weight: 700;">
               yBwpLR
             </span>
           </div>
