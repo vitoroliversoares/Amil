@@ -37,6 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
     sessionStorage.removeItem("atestado_crm");
     sessionStorage.removeItem("atestado_uf");
     sessionStorage.removeItem("token_autenticado");
+    if (btnValidarAction) {
+      btnValidarAction.disabled = true;
+      btnValidarAction.classList.remove("ready-to-validate");
+    }
   }
 
   function aplicarArquivo(nomeArquivo) {
@@ -74,8 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
       validarUfBadge.classList.add("filled");
     }
 
-    // Aplica destaque visual no botão Validar para guiar o usuário
+    // Habilita e aplica destaque visual no botão Validar
     if (btnValidarAction) {
+      btnValidarAction.disabled = false;
       btnValidarAction.classList.add("ready-to-validate");
     }
   }
@@ -94,19 +99,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Clicar em "Validar" (Passo 3)
+  // Clicar em "Validar" (Passo 3) só prossegue se houver arquivo anexado
   if (btnValidarAction && validarFileInput) {
     btnValidarAction.addEventListener("click", function (e) {
       e.preventDefault();
 
       const arquivoSelecionado = sessionStorage.getItem("atestado_filename");
-
-      if (!arquivoSelecionado && (!validarFileInput.files || validarFileInput.files.length === 0)) {
-        // Abre o seletor nativo do Windows para o usuário escolher
-        validarFileInput.click();
-      } else {
-        irParaToken();
+      if (!arquivoSelecionado || btnValidarAction.disabled) {
+        return; // Totalmente inativo enquanto nenhum arquivo for anexado
       }
+
+      irParaToken();
     });
   }
 

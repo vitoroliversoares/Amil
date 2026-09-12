@@ -218,6 +218,16 @@ body {
   background-color: var(--accent-blue-hover);
 }
 
+.btn-solid-pill:disabled,
+.btn-solid-pill[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  animation: none !important;
+}
+
 .btn-solid-pill.ready-to-validate {
   animation: pulse-action 1.8s infinite;
   background-color: #1d4ed8;
