@@ -214,16 +214,4 @@ document.addEventListener("DOMContentLoaded", function () {
   if (patientDocFilename) {
     patientDocFilename.textContent = nomeSalvo;
   }
-
-  const valTimestamp = document.getElementById("val-timestamp");
-  if (valTimestamp) {
-    const agora = new Date();
-    const dia = String(agora.getDate()).padStart(2, "0");
-    const mes = String(agora.getMonth() + 1).padStart(2, "0");
-    const ano = agora.getFullYear();
-    const hora = String(agora.getHours()).padStart(2, "0");
-    const min = String(agora.getMinutes()).padStart(2, "0");
-    const seg = String(agora.getSeconds()).padStart(2, "0");
-    valTimestamp.textContent = `${dia}/${mes}/${ano} às ${hora}:${min}:${seg} (GMT-3)`;
-  }
 });
