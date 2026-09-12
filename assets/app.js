@@ -28,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnValidarChoose = document.getElementById("btn-validar-choose");
   const validarFileStatus = document.getElementById("validar-file-status");
   const btnValidarAction = document.getElementById("btn-validar-action");
-  const validarCrmBadge = document.getElementById("validar-crm-badge");
-  const validarUfBadge = document.getElementById("validar-uf-badge");
 
   // Limpa qualquer arquivo residual de sessões anteriores ao carregar a tela
   if (validarFileInput) {
@@ -66,16 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </svg>
         Trocar Arquivo
       `;
-    }
-
-    // Preenche automaticamente o registro profissional e a UF
-    if (validarCrmBadge) {
-      validarCrmBadge.textContent = DEFAULT_CRM;
-      validarCrmBadge.classList.add("filled");
-    }
-    if (validarUfBadge) {
-      validarUfBadge.textContent = DEFAULT_UF;
-      validarUfBadge.classList.add("filled");
     }
 
     // Habilita e aplica destaque visual no botão Validar
