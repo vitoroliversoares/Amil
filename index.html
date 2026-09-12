@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validador de Assinatura</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <main class="page-container">
+    <div class="main-card">
+      
+      <!-- Top Branding (Sem referências ao governo federal) -->
+      <header class="brand-header">
+        <div class="brand-logo-icon" title="Validador Clínico">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#4338ca" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+        </div>
+        <div class="brand-transfer-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 16l-4-4m0 0l4-4m-4 4h18m-4 4l4-4m0 0l-4-4"/>
+          </svg>
+        </div>
+        <div class="brand-badge">
+          <span>saúde</span><span class="dot">.</span><span class="sub">digital</span>
+        </div>
+      </header>
+
+      <!-- Main Header -->
+      <h1 class="hero-title">Validador de Assinatura</h1>
+      <p class="hero-subtitle">
+        Clique em avançar para acessar o validador. Siga as instruções abaixo para confirmar a validade da assinatura do documento - o processo é rápido e seguro.
+      </p>
+
+      <!-- Botão Único Clicável da Tela Inicial -->
+      <a href="validar.html" id="btn-hero-advance" class="btn-advance">Avançar</a>
+
+      <!-- Instruções visuais estáticas (não clicáveis, apenas guia) -->
+      <section class="instructions-section">
+        <h2 class="instructions-heading">Siga as instruções abaixo:</h2>
+
+        <div class="instructions-grid" style="pointer-events: none; user-select: none;">
+          
+          <!-- Passo 1 -->
+          <div class="instruction-step">
+            <h3>1. Escolher arquivo</h3>
+            <p>Selecione o documento clicando em 'Escolher Arquivo'.</p>
+            <div class="btn-outline-pill" style="cursor: default; pointer-events: none;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+              Escolher Arquivo
+            </div>
+          </div>
+
+          <!-- Passo 2 -->
+          <div class="instruction-step">
+            <h3>2. Aceitar termos</h3>
+            <p>Marque a caixa para aceitar os termos de uso e política de privacidade.</p>
+            <label class="terms-wrapper" style="cursor: default;">
+              <input type="checkbox" disabled style="cursor: default;" />
+              <span>Concordo com os <span style="color: var(--accent-blue);">termos de uso e política de privacidade</span>.</span>
+            </label>
+          </div>
+
+          <!-- Passo 3 -->
+          <div class="instruction-step">
+            <h3>3. Validar documento</h3>
+            <p>Clique em 'Validar' para verificar se a assinatura digital é válida.</p>
+            <div class="btn-solid-pill" style="cursor: default; pointer-events: none;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              Validar
+            </div>
+          </div>
+
+          <!-- Passo 4 -->
+          <div class="instruction-step">
+            <h3>4. Verificar o registro profissional e UF</h3>
+            <p>Verifique se o registro profissional e UF estão preenchidos.</p>
+            <div class="step-meta-info">
+              <div>
+                <strong>Registro profissional:</strong> 
+                <span class="val-badge">12345</span>
+              </div>
+              <div style="margin-top: 4px;">
+                <strong>UF:</strong> 
+                <span class="val-badge">XX</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Rodapé com a Ilustração da Clínica -->
+    <footer class="page-footer">
+      <img 
+        src="assets/footer-clinic.png" 
+        alt="Ilustração consultório médico e atendimento clínico" 
+        class="footer-illustration"
+      />
+      <div class="footer-copyright">
+        Sistema de Verificação e Autenticidade Digital de Documentos de Saúde &copy; 2026
+      </div>
+    </footer>
+  </main>
+
+</body>
+</html>
