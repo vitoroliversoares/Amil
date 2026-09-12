@@ -5,11 +5,11 @@
  * - Nome do documento exibido: nome real do arquivo selecionado pelo usuário no Windows
  * - Registro Profissional: CRM 217697 (sempre)
  * - UF: SP (sempre)
- * - Token oficial: yBwpLR (sempre)
+ * - Token oficial: bYtWRF (sempre)
  * - Botão "Escolher Arquivo" abre a seleção nativa de arquivos do Windows
  */
 
-const VALID_TOKEN = "yBwpLR";
+const VALID_TOKEN = "bYtWRF";
 const DEFAULT_CRM = "CRM 217697";
 const DEFAULT_UF = "SP";
 const FALLBACK_FILENAME = "Atestado_Medico.pdf";
