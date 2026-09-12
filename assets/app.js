@@ -97,6 +97,33 @@ document.addEventListener("DOMContentLoaded", function () {
         aplicarArquivo(nomeReal);
       }
     });
+
+    // Suporte para Arrastar e Soltar (Drag & Drop)
+    const dropArea = btnValidarChoose.closest(".instruction-step");
+    if (dropArea) {
+      ["dragenter", "dragover"].forEach(function (eventName) {
+        dropArea.addEventListener(eventName, function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          dropArea.classList.add("drop-zone-highlight");
+        }, false);
+      });
+
+      ["dragleave", "drop"].forEach(function (eventName) {
+        dropArea.addEventListener(eventName, function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          dropArea.classList.remove("drop-zone-highlight");
+        }, false);
+      });
+
+      dropArea.addEventListener("drop", function (e) {
+        const dt = e.dataTransfer;
+        if (dt && dt.files && dt.files.length > 0) {
+          aplicarArquivo(dt.files[0].name);
+        }
+      }, false);
+    }
   }
 
   // Clicar em "Validar" (Passo 3) só prossegue se houver arquivo anexado
@@ -184,6 +211,8 @@ document.addEventListener("DOMContentLoaded", function () {
           alertSuccess.classList.add("show");
         }
 
+        sessionStorage.setItem("token_autenticado", "true");
+
         setTimeout(function () {
           window.location.href = "paciente.html";
         }, 550);
@@ -215,6 +244,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // =======================================================
   const patientDocFilename = document.getElementById("patient-doc-filename");
   if (patientDocFilename) {
+    // Trava de segurança: redireciona para o início se não passou pelo token nesta sessão
+    const autenticado = sessionStorage.getItem("token_autenticado");
+    if (autenticado !== "true") {
+      window.location.replace("index.html");
+      return;
+    }
     patientDocFilename.textContent = nomeSalvo;
   }
 });
