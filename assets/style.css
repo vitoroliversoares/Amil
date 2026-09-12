@@ -81,20 +81,15 @@ body {
 }
 
 .brand-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.5px;
   color: #1e293b;
 }
 
-.brand-badge span.dot {
-  color: #2563eb;
-}
-
-.brand-badge span.sub {
+.brand-badge .sub {
   color: #2563eb;
   font-weight: 800;
 }
